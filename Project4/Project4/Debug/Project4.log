@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Amiraslan\source\repos\Project4\Project4\Source.cpp(130,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Amiraslan\source\repos\Project4\Project4\Source.cpp(146,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Amiraslan\source\repos\Project4\Project4\Source.cpp(212,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Project4.vcxproj -> C:\Users\Amiraslan\source\repos\Project4\Debug\Project4.exe
