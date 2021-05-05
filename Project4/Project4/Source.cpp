@@ -52,7 +52,7 @@ public:
 	void SetCalori(const int& kcal) {
 		this->kcal = kcal;
 	}
-	 void show() {
+	virtual void show() {
 		
 		cout << "Name: " << name << endl;
 		cout << "Fats: " << fats << endl;
@@ -66,42 +66,91 @@ public:
 
 };
 class Mushrooms :public Ingredient {
+	string country;
 public:
-	Mushrooms(const string name, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal) {
+	Mushrooms(const string name,const string country, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal) {
+		this->country = country;
+	}
+	void show() {
+
+		cout << "Name: " << name << endl;
+		cout << "Country: " << country << endl;
+		cout << "Fats: " << fats << endl;
+		cout << "Protein: " << protein << endl;
+		cout << "Carbohydrate: " << carbohydrates << endl;
+		cout << "Calori: " << kcal << endl;
+		cout << endl;
 
 	}
 };
 class Meat :public Ingredient {
+	string typesOf;
 public:
-	Meat(const string name, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
+	Meat(const string name,const string typesOf ,const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
 	{
-		
+		this->typesOf = typesOf;
 	}
-
-};
-class Spices :public Ingredient {
-public:
-	Spices(const string name, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
-	{
-
+	void show() {
+		cout << "Name: " << name << endl;
+		cout << "Types of: " << typesOf << endl;
+		cout << "Fats: " << fats << endl;
+		cout << "Protein: " << protein << endl;
+		cout << "Carbohydrate: " << carbohydrates << endl;
+		cout << "Calori: " << kcal << endl;
+		cout << endl;
 	}
 	
+};
+class Spices :public Ingredient {
+	string typesOf;
+public:
+	Spices(const string name, const string typesOf, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
+	{
+		this->typesOf = typesOf;
+	}
+	void show() {
+		cout << "Name: " << name << endl;
+		cout << "Types of: " << typesOf << endl;
+		cout << "Fats: " << fats << endl;
+		cout << "Protein: " << protein << endl;
+		cout << "Carbohydrate: " << carbohydrates << endl;
+		cout << "Calori: " << kcal << endl;
+		cout << endl;
+	}
 
 };
 class Cheese :public Ingredient {
+	string country;
 public:
-	Cheese(const string name, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
+	Cheese(const string name,const string country,const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
 	{
-
+		this->country = country;
 	}
-
+	void show() {
+		cout << "Name: " << name << endl;
+		cout << "Country: " << country << endl;
+		cout << "Fats: " << fats << endl;
+		cout << "Protein: " << protein << endl;
+		cout << "Carbohydrate: " << carbohydrates << endl;
+		cout << "Calori: " << kcal << endl;
+		cout << endl;
+	}
 };
 class Tomatoes :public Ingredient {
-	
+	string country;
 public:
-	Tomatoes(const string name, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
+	Tomatoes(const string name,const string country, const double& fat, const double& protein, const double& carbohydrates, const int& kcal) :Ingredient(name, fat, protein, carbohydrates, kcal)
 	{
-
+		this->country = country;
+	}
+	void show() {
+		cout << "Name: " << name << endl;
+		cout << "Country: " << country << endl;
+		cout << "Fats: " << fats << endl;
+		cout << "Protein: " << protein << endl;
+		cout << "Carbohydrate: " << carbohydrates << endl;
+		cout << "Calori: " << kcal << endl;
+		cout << endl;
 	}
 
 };
@@ -269,7 +318,7 @@ public:
 
 		}
 		cout << "=======Hope you enjoy what we've made for you=======" << endl;
-		Sleep(2000);
+		Sleep(3000);
 
 	}
 };
@@ -310,11 +359,11 @@ public:
 
 void Menu::orderMenu() {
 	int counter = 0;
-	Meat* meat = new Meat("Pork", 16, 23, 10, 100);
-	Spices* spices = new Spices("Black pepper", 4.3, 1, 20, 35);
-	Cheese* cheese = new Cheese("Emmental", 6.8, 5.9, 0.3, 86);
-	Tomatoes* tomatoes = new Tomatoes("Tigeralla", 0.2, 0.9, 3.9, 18);
-	Mushrooms* mushrooms = new Mushrooms("Buttom", 0, 3, 3, 21);
+	Meat* meat = new Meat("Venison","Pork", 16, 23, 10, 100);
+	Spices* spices = new Spices("Allspice","Black pepper", 4.3, 1, 20, 35);
+	Cheese* cheese = new Cheese("Taleggio","Italia", 6.8, 5.9, 0.3, 86);
+	Tomatoes* tomatoes = new Tomatoes("Tigeralla","Turkey", 0.2, 0.9, 3.9, 18);
+	Mushrooms* mushrooms = new Mushrooms("Buttom","Germany", 0, 3, 3, 21);
 	cout << "Good evening,which dish would you like to order?" << endl;
 	cout << "[1]Pizza\n[2]Kabab\n[3]Dolma" << endl;
 	int x; cin >> x;
@@ -337,7 +386,7 @@ void Menu::orderMenu() {
 			if (z == 2) break;
 			else {
 				cout << "Select another ingredient:" << endl;
-				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n5[5]Mushrooms" << endl;
+				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n[5]Mushrooms" << endl;
 				int a;
 				cin >> a;
 				if (a == 1) {
@@ -359,7 +408,7 @@ void Menu::orderMenu() {
 
 			
 		}
-		Oven oven(&pizza,true,8);
+		Oven oven(&pizza,true,10);
 		oven.cook();
 		system("cls");
 		pizza.printRecipe();
@@ -384,7 +433,7 @@ void Menu::orderMenu() {
 			if (z == 2) break;
 			else {
 				cout << "Select another ingredient:" << endl;
-				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n5[5]Mushrooms" << endl;
+				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n[5]Mushrooms" << endl;
 				int a;
 				cin >> a;
 				if (a == 1) {
@@ -431,7 +480,7 @@ void Menu::orderMenu() {
 			if (z == 2) break;
 			else {
 				cout << "Select another ingredient:" << endl;
-				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n5[5]Mushrooms" << endl;
+				cout << "[1]Meat\n[2]Spices\n[3]Cheese\n[4]Tomatoes\n[5]Mushrooms" << endl;
 				int a;
 				cin >> a;
 				if (a == 1) {
@@ -453,7 +502,7 @@ void Menu::orderMenu() {
 
 
 		}
-		Pot pot(&dolma, true, 8);
+		Pot pot(&dolma, true, 7);
 		pot.cook();
 		system("cls");
 		dolma.printRecipe();
